@@ -1,0 +1,13 @@
+mqtt:
+  host: test.mosquitto.org
+  port: 1883
+  user: ""
+  password: ""
+  bell_topic: pimqttdoorbell/bell
+  ding_payload: "ON"
+bell:
+  pin: 21
+  ding_value: True
+  dong_delay: 0.35
+  ding_dong_count: 2
+  repeat_delay: 2
