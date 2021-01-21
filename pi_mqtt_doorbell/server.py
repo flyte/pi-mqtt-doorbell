@@ -27,7 +27,7 @@ if __name__ == "__main__":
     args = p.parse_args()
 
     with open(args.config) as f:
-        config = yaml.load(f)
+        config = yaml.safe_load(f)
 
     client = mqtt.Client()
     user = config["mqtt"].get("user")
@@ -65,6 +65,7 @@ if __name__ == "__main__":
         while True:
             sleep(60)
     except KeyboardInterrupt:
-        print ""
+        print("")
     finally:
         client.loop_stop()
+        gpio.cleanup()
